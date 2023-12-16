@@ -1,25 +1,15 @@
 """
 Homework #4.
+
+In this task need to count each vowel occurrence in text below '
+(total sum of lower and capital cases).'
+Then need to modify poem text by replacing letters in it.
+
 Flow:
  - counting each vowel occurrence in text
  - write output as table
  - modify text where each vowel replaced with
-
 # A->À;  a->à ; E-> É ; e->é; I->Í , i->í ; O->Ó ; o->ó; U->Ú; u->ú
-Text:
-I wandered lonely as a cloud
-That floats on high o'er vales and hills,
-When all at once I saw a crowd,
-A host, of golden daffodils;
-Beside the lake, beneath the trees,
-Fluttering and dancing in the breeze.
-
-Continuous as the stars that shine
-And twinkle on the Milky Way,
-They stretched in never-ending line
-Along the margin of a bay:
-Ten thousand saw I at a glance,
-Tossing their heads in sprightly dance.
 """
 
 poem_text = """I wandered lonely as a cloud
@@ -36,17 +26,11 @@ Along the margin of a bay:
 Ten thousand saw I at a glance,
 Tossing their heads in sprightly dance."""
 
-lower_a = poem_text.count('a')
-lower_e = poem_text.count('e')
-lower_i = poem_text.count('i')
-lower_o = poem_text.count('o')
-lower_u = poem_text.count('u')
-
-capital_a = poem_text.count('A')
-capital_e = poem_text.count('E')
-capital_i = poem_text.count('I')
-capital_o = poem_text.count('O')
-capital_u = poem_text.count('U')
+number_a = poem_text.count('a') + poem_text.count('A')
+number_e = poem_text.count('e') + poem_text.count('E')
+number_i = poem_text.count('i') + poem_text.count('I')
+number_o = poem_text.count('o') + poem_text.count('O')
+number_u = poem_text.count('u') + poem_text.count('U')
 
 sep_num = 21
 print("See poem text below")
@@ -58,16 +42,11 @@ print("-" * sep_num)
 print(f"| {'vowel':^7} | {'count':^7} |")
 print("-" * sep_num)
 vowel_count = {
-    "a": lower_a,
-    "e": lower_e,
-    "i": lower_i,
-    "o": lower_o,
-    "u": lower_u,
-    "A": capital_a,
-    "E": capital_e,
-    "I": capital_i,
-    "O": capital_o,
-    "U": capital_u,
+    "a": number_a,
+    "e": number_e,
+    "i": number_i,
+    "o": number_o,
+    "u": number_u,
 }
 
 for letter, number in vowel_count.items():
